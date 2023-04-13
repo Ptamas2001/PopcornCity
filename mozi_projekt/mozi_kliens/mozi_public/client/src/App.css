@@ -467,7 +467,7 @@ video {
 
     }
 }
-@media (max-width:478px) {
+@media (max-width:528px) {
     .text h1 {
         display: none;
     }

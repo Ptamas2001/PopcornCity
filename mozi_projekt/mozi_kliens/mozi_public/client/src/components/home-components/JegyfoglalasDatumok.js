@@ -9,6 +9,15 @@ function JegyfoglalasDatumok({ authState, musor, key }) {
   const [open, setOpen] = useState(false);
 
   const submitKosarhozAdNincs = () => {
+    if(!authState.status){
+      Swal.fire({
+        position: "center",
+        icon: "error",
+        title: "Előbb jelentkezz be!",
+        showConfirmButton: false,
+        timer: 1500,
+      });
+    }else {
     Swal.fire({
       position: "center",
       icon: "error",
@@ -16,9 +25,22 @@ function JegyfoglalasDatumok({ authState, musor, key }) {
       showConfirmButton: false,
       timer: 1500,
     });
+  }
   };
 
   const submitKosarhozAd = (film) => {
+
+    if(!authState.status){
+      Swal.fire({
+        position: "center",
+        icon: "error",
+        title: "Előbb jelentkezz be!",
+        showConfirmButton: false,
+        timer: 1500,
+      });
+    }else {
+
+
     const data = {
       username: authState.username,
       movieId: film.movieId,
@@ -59,6 +81,7 @@ function JegyfoglalasDatumok({ authState, musor, key }) {
           
         }
       });
+    }
   };
 
   const modalVariants = {
